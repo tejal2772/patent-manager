@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import NavBar from './NavBar';
 // function Trademark() {
     const Intelectual = () => {
         const cardHeaderStyle = {
@@ -11,7 +12,7 @@ import Card from 'react-bootstrap/Card';
         };
   return (
     <>
-        <br/>
+        <NavBar/>
         <Container>
             <Row>
             <Col lg={6} style={{ margin: '20px auto' }}>

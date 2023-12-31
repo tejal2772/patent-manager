@@ -1,9 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
+import NavBar from './NavBar';
 
 const PatentSearch = () => {
   return (
     <>
+    <NavBar/>
     <Card style={{ width: '80rem' }}>
       <Card.Body>
         <Card.Title>About this guide</Card.Title>

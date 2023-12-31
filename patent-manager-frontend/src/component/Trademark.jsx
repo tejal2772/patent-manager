@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import NavBar from './NavBar';
 // function Trademark() {
     const Trademark = () => {
         const cardHeaderStyle = {
@@ -10,7 +11,7 @@ import Card from 'react-bootstrap/Card';
         };
   return (
     <>
-        <br/>
+        <NavBar/>
         <Card>
             <div style={cardHeaderStyle}>
           <Card.Header>What is a Trademark?</Card.Header></div>
