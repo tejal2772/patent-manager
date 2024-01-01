@@ -1,8 +1,13 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import NavBar from './NavBar';
+import SignIn from './SignIn';
+import { useNavigate } from 'react-router-dom';
 
 const AboutUs = () => {
+
+    const navigate = useNavigate();
+
     const backgroundImageStyle = {
         backgroundImage: 'url("https://imgs.search.brave.com/-mbpERtM-4hey0PmwQ2LmEcJKnhJYagS2Pm6wSYNoxw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9s/aWdodC1idWxiLXdp/dGgtZHJhd2luZy1n/cmFwaF8xMjMyLTI3/NzUuanBnP3NpemU9/NjI2JmV4dD1qcGc")',
         backgroundSize: 'cover', // Adjust as needed
@@ -17,6 +22,14 @@ const AboutUs = () => {
         color: 'black',
 
     };
+
+    if (!localStorage.getItem('token')) {
+        console.log("Used is not logged in.... please log in");
+        navigate('/login', { replace: true });
+        return <SignIn/>; 
+      }else{
+        console.log("Used is logged in.... please proceed");
+      }
 
     return (
         <>

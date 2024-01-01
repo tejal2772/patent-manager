@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import SignIn from './SignIn';
 
 const NavBar = () => {
 
@@ -15,6 +16,14 @@ const NavBar = () => {
         localStorage.removeItem('user');
         navigate('/login');
     };
+
+    if (!localStorage.getItem('token')) {
+        console.log("Used is not logged in.... please log in");
+        navigate('/login', { replace: true });
+        return <SignIn/>; 
+      }else{
+        console.log("Used is logged in.... please proceed");
+      }
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary">

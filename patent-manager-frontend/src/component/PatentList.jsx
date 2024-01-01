@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Modal, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import SignIn from './SignIn';
 
 const PatentList = () => {
   const [patents, setPatents] = useState([]);
@@ -52,6 +53,14 @@ const PatentList = () => {
   const handleClosePopup = () => {
     setShowPopup(false);
   };
+
+  if (!localStorage.getItem('token')) {
+    console.log("Used is not logged in.... please log in");
+    navigate('/login', { replace: true });
+    return <SignIn />;
+  } else {
+    console.log("Used is logged in.... please proceed");
+  }
 
   return (
     <div>
@@ -105,7 +114,7 @@ const PatentList = () => {
         </Modal.Body>
         <Modal.Footer>
 
-        <Button variant="danger" onClick={() => handleDeletePatent(selectedPatent.patentNumber)}>Delete</Button>
+          <Button variant="danger" onClick={() => handleDeletePatent(selectedPatent.patentNumber)}>Delete</Button>
           <Button variant="secondary" onClick={handleClosePopup}>
             Close
           </Button>

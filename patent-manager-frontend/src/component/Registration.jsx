@@ -14,6 +14,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import SignIn from './SignIn';
 
 function App() {
 
@@ -54,6 +55,13 @@ function App() {
     console.log("Something went wrong.. could not be able to create  Patent ")
   }
 
+  if (!localStorage.getItem('token')) {
+    console.log("Used is not logged in.... please log in");
+    navigate('/login', { replace: true });
+    return <SignIn/>; 
+  }else{
+    console.log("Used is logged in.... please proceed");
+  }
 
 
 };
