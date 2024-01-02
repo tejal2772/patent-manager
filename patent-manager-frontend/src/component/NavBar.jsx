@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import SignIn from './SignIn';
+// import '/nav1.css'
 
 const NavBar = () => {
 

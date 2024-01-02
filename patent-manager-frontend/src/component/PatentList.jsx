@@ -70,7 +70,7 @@ const PatentList = () => {
           <ul>
             {patents.map((patent) => {
               return (
-                <Col lg={6} key={patent._id}>
+                <Col md={8} key={patent._id}>
                   <Card className="shadow" onClick={() => handleCardClick(patent)}>
                     <li>
                       <Card.Body>

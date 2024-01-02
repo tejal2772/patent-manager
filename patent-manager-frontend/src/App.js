@@ -11,6 +11,7 @@ import SignUP from './component/SignUp';
 import Aboutus from './component/Aboutus';
 import Properties from './component/Properties';
 
+
 const App = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
